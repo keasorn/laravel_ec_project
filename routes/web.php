@@ -22,3 +22,6 @@ Route::get("/home",function (){
 Route::get("/product",function (){
     echo "<h1>Product</h1>";
 });
+Route::get('/customer', function () {
+    echo '<h1>customer</h1>';
+});
