@@ -25,3 +25,7 @@ Route::get("/product",function (){
 Route::get('/customer', function () {
     echo '<h1>customer</h1>';
 });
+
+Route::get('/invoice', function () {
+    echo '<h1>invoice</h1>';
+});
