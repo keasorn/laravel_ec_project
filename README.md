@@ -63,8 +63,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # Please Follow the guild line to setup to your PC
-1. cd to your path
-2. clone https://github.com/keasorn/laravel_ec_project/
+1. got to cmd and cd to your path
+2. git clone https://github.com/keasorn/laravel_ec_project/
 3. cd laravel_ec_project
 4. composer install
 5. copy .env.sample to .env
