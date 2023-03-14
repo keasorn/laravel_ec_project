@@ -360,14 +360,12 @@
                         </div>
                     </div>
                 </div>
-                <?php
-                    $products = array("Pro 1", "Pro 2", "Pro 3");
-                ?>
-                @foreach($products as $value)
+
+                @foreach($products as $row)
                 <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
                     <div class="product-item bg-light mb-4">
                         <div class="product-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="/front_end/img/product-1.jpg" alt="">
+                            <img class="img-fluid w-100" src="/images/{{$row->image}}" alt="">
                             <div class="product-action">
                                 <a class="btn btn-outline-dark btn-square" href=""><i
                                             class="fa fa-shopping-cart"></i></a>
@@ -377,7 +375,7 @@
                             </div>
                         </div>
                         <div class="text-center py-4">
-                            <a class="h6 text-decoration-none text-truncate" href="">{{$value}}</a>
+                            <a class="h6 text-decoration-none text-truncate" href="{{route('products.show',$row->id)}}">{{$row->name}}</a>
                             <div class="d-flex align-items-center justify-content-center mt-2">
                                 <h5>$123.00</h5>
                                 <h6 class="text-muted ml-2">
