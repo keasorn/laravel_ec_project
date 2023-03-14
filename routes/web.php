@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductCategoryController;
+use App\Models\ProductCategory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
@@ -13,9 +15,6 @@ use App\Http\Controllers\ProductController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return 'Home';
-});
 Route::get("/home",function (){
     return "Home";
 });
@@ -37,8 +36,7 @@ Route::get("/new_product",function (){
     return view("back_end.manage_product.index");
 });
 
-Route::get("/shop",
-    "App\Http\Controllers\FrontEndController@shop");
+Route::get("/", "App\Http\Controllers\FrontEndController@shop");
 Route::get('/about', 'App\Http\Controllers\FrontEndController@about');
 Route::get('/contact', 'App\Http\Controllers\FrontEndController@contact');
 Route::get('/home', 'App\Http\Controllers\FrontEndController@home');
@@ -52,3 +50,4 @@ Route::get('/admin/sample_table', function () {
 
 
 Route::resource('products', ProductController::class);
+Route::resource('/admin/product_category', ProductCategoryController::class);

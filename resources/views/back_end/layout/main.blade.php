@@ -13,10 +13,18 @@
     <link rel="stylesheet" href="/back_end/dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
-@yield("content")
 
-@yield("footer")
+<div class="wrapper">
+    @include("back_end.layout.nav")
+    @include("back_end.layout.main-sidebar")
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+       @yield("content")
+    </div>
+    <!-- /.content-wrapper -->
 
+    @include("back_end.layout.footer")
+</div>
 <!-- jQuery -->
 <script src="/back_end/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
