@@ -24,17 +24,18 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>New Product</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/back_end/index2.html" class="nav-link">
+                            <a href="/products" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Product List</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/products/create" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>New Product</p>
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a href="{{route("product_category.index")}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>

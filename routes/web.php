@@ -51,3 +51,10 @@ Route::get('/admin/sample_table', function () {
 
 Route::resource('products', ProductController::class);
 Route::resource('/admin/product_category', ProductCategoryController::class);
+Route::get('/customer', 'App\Http\Controllers\FrontEndController@customer');
+Route::get('/product_list', 'App\Http\Controllers\FrontEndController@productList');
+Route::get('/product_detail', 'App\Http\Controllers\FrontEndController@productDetail');
+Route::get('/add_to_cart', 'App\Http\Controllers\FrontEndController@addToCart');
+Route::get('/checkout', 'App\Http\Controllers\FrontEndController@checkOut');
+Route::get('/shop', 'App\Http\Controllers\FrontEndController@shop');
+

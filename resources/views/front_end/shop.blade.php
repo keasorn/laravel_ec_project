@@ -9,7 +9,7 @@
     <meta content='Free HTML Templates' name='description'>
 
     <!-- Favicon -->
-    <link href='front_end/img/favicon.ico' rel='icon'>
+    <link href='/front_end/img/favicon.ico' rel='icon'>
 
     <!-- Google Web Fonts -->
     <link rel='preconnect' href='https://fonts.gstatic.com'>
@@ -19,11 +19,11 @@
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css' rel='stylesheet'>
 
     <!-- Libraries Stylesheet -->
-    <link href='front_end/lib/animate/animate.min.css' rel='stylesheet'>
-    <link href='front_end/lib/owlcarousel/assets/owl.carousel.min.css' rel='stylesheet'>
+    <link href='/front_end/lib/animate/animate.min.css' rel='stylesheet'>
+    <link href='/front_end/lib/owlcarousel/assets/owl.carousel.min.css' rel='stylesheet'>
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href='front_end/css/style.css' rel='stylesheet'>
+    <link href='/front_end/css/style.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -360,34 +360,36 @@
                         </div>
                     </div>
                 </div>
-
-                @foreach($products as $product)
-                <div class='col-lg-4 col-md-6 col-sm-6 pb-1'>
-                    <div class='product-item bg-light mb-4'>
-                        <div class='product-img position-relative overflow-hidden'>
-                            <img class='img-fluid w-100' src='/images/{{ $product->image }}' alt=''>
-                            <div class='product-action'>
-                                <a class='btn btn-outline-dark btn-square' href=''><i
-                                            class='fa fa-shopping-cart'></i></a>
-                                <a class='btn btn-outline-dark btn-square' href=''><i class='far fa-heart'></i></a>
-                                <a class='btn btn-outline-dark btn-square' href=''><i class='fa fa-sync-alt'></i></a>
-                                <a class='btn btn-outline-dark btn-square' href=''><i class='fa fa-search'></i></a>
+                <?php
+                    $products = array("Pro 1", "Pro 2", "Pro 3");
+                ?>
+                @foreach($products as $value)
+                <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                    <div class="product-item bg-light mb-4">
+                        <div class="product-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="/front_end/img/product-1.jpg" alt="">
+                            <div class="product-action">
+                                <a class="btn btn-outline-dark btn-square" href=""><i
+                                            class="fa fa-shopping-cart"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
                             </div>
                         </div>
-                        <div class='text-center py-4'>
-                            <a class='h6 text-decoration-none text-truncate' href=''>{{$product->name}}</a>
-                            <div class='d-flex align-items-center justify-content-center mt-2'>
+                        <div class="text-center py-4">
+                            <a class="h6 text-decoration-none text-truncate" href="">{{$value}}</a>
+                            <div class="d-flex align-items-center justify-content-center mt-2">
                                 <h5>$123.00</h5>
-                                <h6 class='text-muted ml-2'>
+                                <h6 class="text-muted ml-2">
                                     <del>$123.00</del>
                                 </h6>
                             </div>
-                            <div class='d-flex align-items-center justify-content-center mb-1'>
-                                <small class='fa fa-star text-primary mr-1'></small>
-                                <small class='fa fa-star text-primary mr-1'></small>
-                                <small class='fa fa-star text-primary mr-1'></small>
-                                <small class='fa fa-star text-primary mr-1'></small>
-                                <small class='fa fa-star text-primary mr-1'></small>
+                            <div class="d-flex align-items-center justify-content-center mb-1">
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small class="fa fa-star text-primary mr-1"></small>
                                 <small>(99)</small>
                             </div>
                         </div>
@@ -480,7 +482,7 @@
             </p>
         </div>
         <div class="col-md-6 px-xl-0 text-center text-md-right">
-            <img class="img-fluid" src="front_end/img/payments.png" alt="">
+            <img class="img-fluid" src="/front_end/img/payments.png" alt="">
         </div>
     </div>
 </div>
@@ -494,15 +496,15 @@
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-<script src="front_end/lib/easing/easing.min.js"></script>
-<script src="front_end/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="/front_end/lib/easing/easing.min.js"></script>
+<script src="/front_end/lib/owlcarousel/owl.carousel.min.js"></script>
 
 <!-- Contact Javascript File -->
-<script src="front_end/mail/jqBootstrapValidation.min.js"></script>
-<script src="front_end/mail/contact.js"></script>
+<script src="/front_end/mail/jqBootstrapValidation.min.js"></script>
+<script src="/front_end/mail/contact.js"></script>
 
 <!-- Template Javascript -->
-<script src="front_end/js/main.js"></script>
+<script src="/front_end/js/main.js"></script>
 </body>
 
 </html>
