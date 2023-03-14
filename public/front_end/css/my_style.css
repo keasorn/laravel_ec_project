@@ -1,0 +1,9 @@
+.bg-primary {
+    background-color: pink !important;
+}
+
+.btn-primary {
+    color: #212529;
+    background-color: #ff0000;
+    border-color: #FFD333;
+}
