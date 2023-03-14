@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Models\ProductCategory;
 use Illuminate\Support\Facades\Route;
@@ -49,7 +50,8 @@ Route::get('/admin/sample_table', function () {
 });
 
 
-Route::resource('products', ProductController::class);
+Route::resource('/admin/customer', CustomerController::class);
+Route::resource('/admin/products', ProductController::class);
 Route::resource('/admin/product_category', ProductCategoryController::class);
 Route::get('/customer', 'App\Http\Controllers\FrontEndController@customer');
 Route::get('/product_list', 'App\Http\Controllers\FrontEndController@productList');
