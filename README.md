@@ -66,8 +66,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 1. cd to your path
 2. clone https://github.com/keasorn/laravel_ec_project/
 3. cd laravel_ec_project
-4. composert install
+4. composer install
 5. copy .env.sample to .env
 6. config and create database
-7. php artisan key:generate
-8. php artisan server
+7. php artisan migrate
+8. php artisan key:generate
+9. php artisan server
