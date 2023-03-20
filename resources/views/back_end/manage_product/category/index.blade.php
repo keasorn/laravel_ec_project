@@ -21,8 +21,8 @@
                 <th style="width: 10px">#</th>
                 <th>Name</th>
                 <th>Slug</th>
-                <th style="width: 40px">Parent</th>
-                <th style="width: 40px">action</th>
+                <th>Parent</th>
+                <th width="300">action</th>
               </tr>
             </thead>
             <tbody>
