@@ -37,8 +37,16 @@
                     <strong>Name:</strong>
                     <input type="text" name="name" value="{{ $product->name }}" class="form-control" placeholder="Name">
                 </div>
+
+            <div class="form-group">
+                <strong>Product Category:</strong>
+                <select name="cat_id" id="cat_id"  class="form-control">
+                    @foreach($pro_cats as $row)
+                        <option value="{{$row->id}}"  {{$row->id==$product->cat_id?'selected':''}}>{{$row->name}}</option>
+                    @endforeach
+                </select>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
+
                 <div class="form-group">
                     <strong>Detail:</strong>
                     <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $product->detail }}</textarea>

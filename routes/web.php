@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\AddToCartController;
+use App\Http\Controllers\CheckOutController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Models\CheckOut;
 use App\Models\ProductCategory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -44,6 +47,11 @@ Route::get('/contact', 'App\Http\Controllers\FrontEndController@contact');
 Route::get('/home', 'App\Http\Controllers\FrontEndController@home');
 Route::get("/admin/dashboard",function (){
    return view("back_end.dashboard");
+});Route::get("/admin/all_order",function (){
+    $data = array(
+        'orders'=>CheckOut::get()
+    );
+   return view("back_end.order")->with($data);
 });
 
 Route::get('/admin/sample_table', function () {
@@ -56,14 +64,17 @@ Route::resource('/admin/products', ProductController::class);
 Route::resource('/admin/product_category', ProductCategoryController::class);
 
 Route::resource('/admin/coupons', CouponController::class);
+Route::resource('/add_to_cart', AddToCartController::class);
+Route::resource('/check_out', CheckOutController::class);
 
 
 
 
 Route::get('/customer', 'App\Http\Controllers\FrontEndController@customer');
 Route::get('/product_list', 'App\Http\Controllers\FrontEndController@productList');
-Route::get('/product_detail', 'App\Http\Controllers\FrontEndController@productDetail');
 Route::get('/add_to_cart', 'App\Http\Controllers\FrontEndController@addToCart');
 Route::get('/checkout', 'App\Http\Controllers\FrontEndController@checkOut');
 Route::get('/shop', 'App\Http\Controllers\FrontEndController@shop');
+Route::get('/search_by_cat', 'App\Http\Controllers\FrontEndController@result');
+Route::get('/product_detail', 'App\Http\Controllers\FrontEndController@productDetail');
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -16,8 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->paginate(5);
-
+        $products = Product::with("category")->latest()->paginate(5);
         return view('back_end.manage_product.index', compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -29,7 +29,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('back_end.manage_product.create');
+        $data = array(
+            'pro_cats' => ProductCategory::get()
+        );
+        return view('back_end.manage_product.create')->with($data);
     }
 
     /**
@@ -43,6 +46,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required',
             'detail' => 'required',
+            'cat_id' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -80,7 +84,11 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('back_end.manage_product.edit', compact('product'));
+        $data = array(
+            'pro_cats' => ProductCategory::get(),
+            'product'=>$product
+        );
+        return view('back_end.manage_product.edit')->with( $data);
     }
 
     /**

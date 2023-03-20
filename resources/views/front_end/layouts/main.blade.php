@@ -3,7 +3,7 @@
 
 <head>
     <meta charset='utf-8'>
-    <title>@yield("title")</title>
+    <title>MultiShop - Online Shop Website Template</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <meta content='Free HTML Templates' name='keywords'>
     <meta content='Free HTML Templates' name='description'>
@@ -85,8 +85,8 @@
     <div class='row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex'>
         <div class='col-lg-4'>
             <a href='' class='text-decoration-none'>
-                <span class='h1 text-uppercase text-primary bg-dark px-2'>EC</span>
-                <span class='h1 text-uppercase text-dark bg-primary px-2 ml-n1'>CAD Shop</span>
+                <span class='h1 text-uppercase text-primary bg-dark px-2'>Multi</span>
+                <span class='h1 text-uppercase text-dark bg-primary px-2 ml-n1'>Shop</span>
             </a>
         </div>
         <div class='col-lg-4 col-6 text-left'>
@@ -103,7 +103,7 @@
         </div>
         <div class='col-lg-4 col-6 text-right'>
             <p class='m-0'>Customer Service</p>
-            <h5 class='m-0'>+0123131124</h5>
+            <h5 class='m-0'>+012 345 6789</h5>
         </div>
     </div>
 </div>
@@ -122,24 +122,14 @@
             <nav class='collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light'
                  id='navbar-vertical' style='width: calc(100% - 30px); z-index: 999;'>
                 <div class='navbar-nav w-100'>
-                    <div class='nav-item dropdown dropright'>
-                        <a href='#' class='nav-link dropdown-toggle' data-toggle='dropdown'>Dresses <i
-                                    class='fa fa-angle-right float-right mt-1'></i></a>
-                        <div class='dropdown-menu position-absolute rounded-0 border-0 m-0'>
-                            <a href='' class='dropdown-item'>Men's Dresses</a>
-                            <a href="" class="dropdown-item">Women's Dresses</a>
-                            <a href='' class='dropdown-item'>Baby's Dresses</a>
-                        </div>
-                    </div>
-                    <a href="" class="nav-item nav-link">Shirts</a>
-                    <a href="" class="nav-item nav-link">Jeans</a>
-                    <a href="" class="nav-item nav-link">Swimwear</a>
-                    <a href="" class="nav-item nav-link">Sleepwear</a>
-                    <a href="" class="nav-item nav-link">Sportswear</a>
-                    <a href="" class="nav-item nav-link">Jumpsuits</a>
-                    <a href="" class="nav-item nav-link">Blazers</a>
-                    <a href="" class="nav-item nav-link">Jackets</a>
-                    <a href="" class="nav-item nav-link">Shoes</a>
+                    <?php
+                    use App\Models\ProductCategory;
+                    $productCate = ProductCategory::get();
+                    ?>
+                    @foreach($productCate as $row)
+                        <a href="/search_by_cat?id={{$row->id}}" class="nav-item nav-link">{{$row->name}}</a>
+                    @endforeach
+
                 </div>
             </nav>
         </div>
@@ -154,7 +144,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">ទំព័រដើម</a>
+                        <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="shop.html" class="nav-item nav-link active">Shop</a>
                         <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
                         <div class="nav-item dropdown">
@@ -187,13 +177,20 @@
 <!-- Navbar End -->
 
 
-<!-- Shop Start -->
+<!-- Breadcrumb Start -->
 <div class="container-fluid">
-    @yield("content")
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="#">Home</a>
+                <a class="breadcrumb-item text-dark" href="#">@yield("map")</a>
+            </nav>
+        </div>
+    </div>
 </div>
+<!-- Breadcrumb End -->
 
-
-
+@yield("main-content")
 
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
@@ -266,8 +263,11 @@
     </div>
 </div>
 <!-- Footer End -->
+
+
 <!-- Back to Top -->
 <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

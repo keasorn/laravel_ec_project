@@ -19,6 +19,25 @@ class FrontEndController extends Controller
 
         return view('front_end.shop')->with($data);
     }
+    function result(Request $request)
+    {
+        $products = Product::where("cat_id",$request->id)->paginate(4);
+
+        $data = array(
+            'products' =>$products,
+            'title'=>"PRODUCT ALL"
+        );
+
+        return view('front_end.result')->with($data);
+    }
+    function productDetail(Request $request)
+    {
+        $product = Product::where("id",$request->pro_id)->first();
+        $data = array(
+            'product' =>$product,
+        );
+        return view('front_end.product_detail')->with($data);
+    }
     function home(){
         return view('front_end.home');
     }
@@ -45,9 +64,5 @@ class FrontEndController extends Controller
         return view('front_end.add_to_cart');
     }
 
-    function productDetail()
-    {
-        return view('front_end.add_to_cart');
-    }
 
 }
